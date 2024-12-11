@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="/assets/uploads/7733518.png" type="image/png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CDN for popups -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.css">
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .dashboard-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 10px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .stat-card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card .icon {
+            font-size: 2rem;
+            color: #007bff;
+        }
+        .card-title {
+            font-size: 1.5rem;
+        }
+        .icon-btn {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <div class="dashboard-header mb-4">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Manage your account and stay up to date!</p>
+    </div>
+
+    <div class="container">
+        <!-- User Information Card -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">User Information</h5>
+                        <p class="card-text">Manage your account and profile.</p>
+                        <a href="{{ url_for('users') }}" class="btn btn-primary">Go to Users</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logout Card -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Logout</h5>
+                        <p class="card-text">Log out from your account</p>
+                        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+
+    <!-- SweetAlert2 JS for popups -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Example SweetAlert usage (You can replace this with your desired action)
+        document.querySelector('.btn-danger').addEventListener('click', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'Do you really want to logout?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, logout!',
+                cancelButtonText: 'Cancel',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ url_for('logout') }}";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
