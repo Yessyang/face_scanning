@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Admin User",
+        "email": "admin@example.com",
+        "password": "scrypt:32768:8:1$U1nCpFKg2GqjhiFb$9c84f42f368e7b6516c09067f52f71eaa2a5a810fb8191f74724cd7aa7d3ae9c4f6117f2d5a1806a90e75042eec18e54c38990bc355bac588a809def4038addd",
+        "image": "images (18).jpeg",
+        "type": "admin"
+    },
+    {
+        "id": 10,
+        "name": "ye",
+        "email": "ye@gmail.com",
+        "password": "scrypt:32768:8:1$MnyMm687Y9YSBFKK$39ed999908c625c8ef6b664fd5300bb1389672e5c89655dc3947f08f425cf78d6868d961ef83a41f50191b28410bce427384b4c720c2208f872d49c61fd5cff4",
+        "image": "boss.jpeg",
+        "type": "admin"
+    }
+]
