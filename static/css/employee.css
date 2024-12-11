@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+}
+h1{
+    color: red;
+    display: flex;
+    justify-content: center;
+    font-family: 'Blood Hunter';
+    font-size: 100px;
+}
